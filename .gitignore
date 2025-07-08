@@ -3,6 +3,7 @@ credentials.json
 processed_threads.json
 token.json
 audit_log.csv
+fiscal_fetch_output/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

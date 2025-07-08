@@ -55,11 +55,11 @@ def main():
         help="Deletes downloaded files and resets the index for a given period. Use 'YYYY', 'YYYY-MM', or 'all'."
     )
     
-    # New "report" argument
+    # New "no-report" argument
     parser.add_argument(
-        "--generate-report",
+        "--no-report",
         action="store_true",
-        help="Extracts email data into a report and saves emails as .eml files."
+        help="Disables the generation of the extraction_report.csv and saving of .eml files."
     )
 
     args = parser.parse_args()
