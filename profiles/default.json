@@ -1,0 +1,24 @@
+{
+  "include_keywords": [
+    "invoice",
+    "receipt",
+    "billing statement",
+    "order confirmation",
+    "e-ticket",
+    "payment confirmation"
+  ],
+  "from_senders": [],
+  "exclude_keywords": [
+    "promotional",
+    "newsletter",
+    "offer",
+    "reminder",
+    "overdue",
+    "declined",
+    "Re:",
+    "Fwd:",
+    "thank you for your payment",
+    "chat with",
+    "renewal"
+  ]
+}

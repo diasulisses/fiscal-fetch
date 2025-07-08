@@ -1,0 +1,23 @@
+{
+  "include_keywords": [
+    "semrush",
+    "ahrefs",
+    "canva",
+    "figma"
+  ],
+  "from_senders": [
+    "adobe.com",
+    "upwork.com",
+    "fiverr.com",
+    "godaddy.com",
+    "namecheap.com",
+    "aws.amazon.com",
+    "digitalocean.com",
+    "mailchimp.com",
+    "hubspot.com",
+    "ads.google.com",
+    "business.facebook.com",
+    "linkedin.com"
+  ],
+  "exclude_keywords": []
+}
