@@ -39,10 +39,11 @@ venv.bak/
 *.manifest
 *.spec
 
-# Installer logs
+# Installer logs & other logs
 debug.log
 pip-log.txt
 pip-delete-this-directory.txt
+audit_log.csv
 
 # Unit test / coverage reports
 htmlcov/

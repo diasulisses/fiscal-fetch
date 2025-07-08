@@ -37,8 +37,14 @@ def main():
     )
     parser.add_argument(
         "--dry-run",
-        action="store_true", # This makes it a flag, no value needed
+        action="store_true",
         help="Perform a dry run without downloading any files. Lists the emails that would be processed."
+    )
+    # Add the new --force-rescan flag
+    parser.add_argument(
+        "--force-rescan",
+        action="store_true",
+        help="Ignore the processed threads index and re-scan all emails in the date range."
     )
 
     args = parser.parse_args()
