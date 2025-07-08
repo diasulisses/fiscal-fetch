@@ -14,47 +14,65 @@ def main():
     Parses command-line arguments and triggers the core logic.
     """
     parser = argparse.ArgumentParser(
-        description="A tool to fetch financial documents from your Gmail account."
+        description="A tool to fetch and manage financial documents from your Gmail account."
     )
 
+    # Main "run" arguments
     parser.add_argument(
         "--profile",
         type=str,
         default="default",
-        help="The name of the search profile to use (e.g., 'marketing-agency'). Defaults to 'default'."
+        help="The name of the search profile to use (e.g., 'marketing-agency')."
     )
     parser.add_argument(
         "--date-range",
         type=str,
-        required=True,
-        help="The date range for the search. Use 'YYYY' for a full year or 'YYYY-MM-DD:YYYY-MM-DD' for a specific range."
+        help="Required for a download run. Use 'YYYY' or 'YYYY-MM-DD:YYYY-MM-DD'."
     )
     parser.add_argument(
         "--output-directory",
         type=str,
-        default="downloads",
-        help="The directory where files will be saved. Defaults to 'downloads'."
+        default="fiscal_fetch_output",
+        help="The root directory for all outputs (logs, reports, downloads)."
     )
     parser.add_argument(
         "--dry-run",
         action="store_true",
-        help="Perform a dry run without downloading any files. Lists the emails that would be processed."
+        help="Perform a dry run without downloading any files."
     )
-    # Add the new --force-rescan flag
     parser.add_argument(
         "--force-rescan",
         action="store_true",
-        help="Ignore the processed threads index and re-scan all emails in the date range."
+        help="Ignore the processed threads index and re-scan all emails."
+    )
+
+    # New "reset" argument
+    parser.add_argument(
+        "--reset",
+        type=str,
+        nargs='?',
+        const="all",
+        help="Deletes downloaded files and resets the index for a given period. Use 'YYYY', 'YYYY-MM', or 'all'."
+    )
+    
+    # New "report" argument
+    parser.add_argument(
+        "--generate-report",
+        action="store_true",
+        help="Extracts email data into a report and saves emails as .eml files."
     )
 
     args = parser.parse_args()
-
-    # Convert the parsed arguments into a dictionary to use as configuration
     config = vars(args)
-
-    # Create an instance of our core application and run it
     app = FiscalFetchCore(config)
-    app.run()
+
+    if args.reset:
+        app.reset_period(args.reset)
+    elif args.date_range:
+        app.run()
+    else:
+        parser.print_help()
+
 
 if __name__ == '__main__':
     main()

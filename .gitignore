@@ -1,3 +1,9 @@
+# Application specific
+credentials.json
+processed_threads.json
+token.json
+audit_log.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -39,11 +45,10 @@ venv.bak/
 *.manifest
 *.spec
 
-# Installer logs & other logs
+# Installer logs
 debug.log
 pip-log.txt
 pip-delete-this-directory.txt
-audit_log.csv
 
 # Unit test / coverage reports
 htmlcov/
