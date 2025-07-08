@@ -1,0 +1,11 @@
+# Google API Libraries
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+
+# For converting HTML to PDF
+weasyprint
+beautifulsoup4
+
+# For parsing dates
+python-dateutil
